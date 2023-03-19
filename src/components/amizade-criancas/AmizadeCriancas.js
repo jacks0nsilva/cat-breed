@@ -9,13 +9,12 @@ import { Desc } from "../desc/desc";
 function AmizadeCriancas({children_friendly}){
     switch(children_friendly){
         case 1:
-        return(
+            return(
             <Desc>
                 <h2>Amizade com crianças:</h2>
                 <One/>
             </Desc>
-        )
-        break
+            )
         case 2:
             return(
                 <Desc>
@@ -23,7 +22,6 @@ function AmizadeCriancas({children_friendly}){
                     <Two/>
                 </Desc>
             )
-            break
         case 3:
             return(
                 <Desc>
@@ -31,7 +29,6 @@ function AmizadeCriancas({children_friendly}){
                     <Three/>
                 </Desc>
             )
-            break
         case 4:
             return(
                 <Desc>
@@ -39,7 +36,6 @@ function AmizadeCriancas({children_friendly}){
                     <Four/>
                 </Desc>
             )
-            break
         case 5:
             return(
                 <Desc>
@@ -47,7 +43,8 @@ function AmizadeCriancas({children_friendly}){
                     <Five/>
                 </Desc>
             )
-            break
+        default:
+        console.log('Erro!')
     }
 }
 
