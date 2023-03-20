@@ -3,6 +3,7 @@ import 'animate.css'
 export const Container = styled.div`
     max-width: 900px;
     border-radius: 1rem;
+    margin-bottom: 30px;
     background-color: white;
     display: grid;
     font-family: 'League Spartan', sans-serif;
