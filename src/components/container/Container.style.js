@@ -32,10 +32,12 @@ export const Titulo = styled.h1`
 export const Imagem = styled.img`
     max-width: 450px;
     grid-area: Imagem;
-    padding: 20px;
-    border-radius: 2rem;
+    margin: 20px;
+    border-radius: 1rem;
     align-self: center;
     justify-self: center;
+    border: none;
+    box-shadow: rgb(0 0 0 / 28%) 2px 2px 20px 0px;
 
     @media(max-width: 500px){
         max-width: 300px;
@@ -46,11 +48,17 @@ export const Descricao = styled.p`
     grid-area: Descricao;
     padding: 20px;
     font-size: 1.2rem;
+    text-align: justify;
 
     @media(max-width: 500px){
         font-size: .9rem;
     }
 `
+
+export const TempoDeVida = styled.p`
+    font-weight: bold;
+    font-size: 1.3rem;
+` 
 
 export const Botao = styled.button`
     background-color: #9E4784;

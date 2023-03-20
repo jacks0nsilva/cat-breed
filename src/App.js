@@ -5,7 +5,7 @@ import ApegoAoDono from './components/apego-ao-dono/ApegoAoDono';
 import Brincalhao from './components/brincalhao/Brincalhao';
 import Carregando from './components/carregando/Carregando';
 
-import { Container, Imagem, Titulo, Descricao, Botao, Caracteristicas } from './components/container/Container.style';
+import { Container, Imagem, Titulo, Descricao, Botao, Caracteristicas, TempoDeVida } from './components/container/Container.style';
 import Inteligencia from './components/inteligencia/Inteligencia';
 
 function App() {
@@ -42,7 +42,8 @@ function App() {
     playfulness,
     intelligence,
     children_friendly,
-    other_pets_friendly} = cat
+    other_pets_friendly,
+    expectativa} = cat
 
   if(loading){
     return (
@@ -56,6 +57,9 @@ function App() {
       <Imagem src={img}/>
       <Descricao>
         {descricao}
+        <TempoDeVida>
+          {expectativa}
+        </TempoDeVida>
       </Descricao>
       <Botao onClick={searchCat}>Next Cat</Botao>
       <Caracteristicas>

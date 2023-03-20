@@ -46,32 +46,6 @@ function Inteligencia({intelligence}){
         default:
         console.log('Erro!')
     }
-/*     if(intelligence === 1){
-        <Desc>
-        <h2>Inteligência:</h2>
-        <One/>
-        </Desc>
-    } else if (intelligence === 2){
-        <Desc>
-        <h2>Inteligência:</h2>
-        <Two/>
-        </Desc>
-    } else if(intelligence === 3){
-        <Desc>
-        <h2>Inteligência:</h2>
-        <Three/>
-        </Desc>
-    } else if (intelligence === 4){
-        <Desc>
-        <h2>Inteligência:</h2>
-        <Four/>
-        </Desc>
-    } else if (intelligence === 5){
-        <Desc>
-        <h2>Inteligência:</h2>
-        <Five/>
-        </Desc>
-    } */
 }
 
 export default Inteligencia
