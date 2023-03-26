@@ -5,9 +5,12 @@ import Three from '../rate3/RateThree'
 import Four from '../rate4/RateFour'
 import Five from '../rate5/RateFive'
 import { Desc } from "../desc/desc";
+import { GlobalStorage } from "../../GlobalStorage";
 
-function Brincalhao({playfulness}){
-    switch(playfulness){
+function Brincalhao(){
+
+    const {cat} = React.useContext(GlobalStorage)
+    switch(cat.playfulness){
         case 1:
             return(
             <Desc>

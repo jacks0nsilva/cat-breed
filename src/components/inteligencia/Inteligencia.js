@@ -5,9 +5,11 @@ import Three from '../rate3/RateThree'
 import Four from '../rate4/RateFour'
 import Five from '../rate5/RateFive'
 import { Desc } from "../desc/desc";
+import { GlobalStorage } from "../../GlobalStorage";
 
-function Inteligencia({intelligence}){
-    switch(intelligence){
+function Inteligencia(){
+    const {cat} = React.useContext(GlobalStorage)
+    switch(cat.intelligence){
         case 1:
             return(
             <Desc>

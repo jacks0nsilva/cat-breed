@@ -4,47 +4,16 @@ import AmizadeCriancas from './components/amizade-criancas/AmizadeCriancas';
 import ApegoAoDono from './components/apego-ao-dono/ApegoAoDono';
 import Brincalhao from './components/brincalhao/Brincalhao';
 import Carregando from './components/carregando/Carregando';
+import { GlobalStorage } from './GlobalStorage';
 
-import { Container, Imagem, Titulo, Descricao, Botao, Caracteristicas, TempoDeVida } from './components/container/Container.style';
+
+import { Container, Imagem, Descricao, Botao, Caracteristicas, TempoDeVida, Titulo } from './components/container/Container.style';
 import Inteligencia from './components/inteligencia/Inteligencia';
 
 function App() {
+  const {cat, loading, searchCat} = React.useContext(GlobalStorage)
 
-  const [cat, setCat] = React.useState([])
-  const [loading, setLoading] = React.useState([true])
-
-  React.useEffect(()=>{
-    async function searchCat(){
-      const response = await fetch('./infoCats.json')
-      const data = await response.json()
-      const randomIndex = Math.floor(Math.random() * data.length)
-      setCat(data[randomIndex])
-      setLoading(false)
-    }
-    searchCat()
-  },[])
-
-
-  async function searchCat(){
-    setLoading(true)
-    const response = await fetch('./infoCats.json')
-    const data = await response.json()
-    const randomIndex = Math.floor(Math.random() * data.length)
-    setCat(data[randomIndex])
-    setLoading(false)
-  }
-
-
-  const {
-    raca,
-    img,descricao,
-    family_friendly,
-    playfulness,
-    intelligence,
-    children_friendly,
-    other_pets_friendly,
-    expectativa} = cat
-
+ // if (cat === null) return null
   if(loading){
     return (
       <Carregando/>
@@ -52,29 +21,27 @@ function App() {
   } else{
 
     return (
-      <Container>
-      <Titulo>{raca}</Titulo>
-      <Imagem src={img}/>
-      <Descricao>
-        {descricao}
-        <TempoDeVida>
-          {expectativa}
-        </TempoDeVida>
-      </Descricao>
-      <Botao onClick={searchCat}>Next Cat</Botao>
-      <Caracteristicas>
-        <h3>Características do {raca}</h3>
-      <ApegoAoDono family_friendly={family_friendly}/>
-      <Brincalhao playfulness={playfulness} />
-      <Inteligencia intelligence={intelligence}/>
-      <AmizadeCriancas children_friendly={children_friendly}/>
-      <AmizadeAnimais other_pets_friendly={other_pets_friendly}/>
-      </Caracteristicas>
-      </Container>
+        <Container>
+        <Titulo>{cat.raca}</Titulo>
+        <Imagem src={cat.img}/>
+        <Descricao>
+          {cat.descricao}
+          <TempoDeVida>
+            {cat.expectativa}
+          </TempoDeVida>
+        </Descricao>
+        <Botao onClick={searchCat}>Next Cat</Botao>
+        <Caracteristicas>
+          <h3>Características do {cat.raca}</h3>
+        <ApegoAoDono/>
+        <Brincalhao />
+        <Inteligencia/>
+        <AmizadeCriancas/>
+        <AmizadeAnimais/>
+        </Caracteristicas>
+        </Container>
     );
-  }
-
-
+    }
 }
 
 export default App;

@@ -5,9 +5,14 @@ import Three from '../rate3/RateThree'
 import Four from '../rate4/RateFour'
 import Five from '../rate5/RateFive'
 import { Desc } from "../desc/desc";
+import { GlobalStorage } from "../../GlobalStorage";
 
-function AmizadeCriancas({children_friendly}){
-    switch(children_friendly){
+
+
+function AmizadeCriancas(){
+    const {cat} = React.useContext(GlobalStorage)
+
+    switch(cat.children_friendly){
         case 1:
             return(
             <Desc>

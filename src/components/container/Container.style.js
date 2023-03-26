@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import 'animate.css'
-export const Container = styled.div`
+export const Container = styled.main`
     max-width: 900px;
     border-radius: 1rem;
     margin-bottom: 30px;

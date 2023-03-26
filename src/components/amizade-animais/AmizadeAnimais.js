@@ -5,9 +5,13 @@ import Three from '../rate3/RateThree'
 import Four from '../rate4/RateFour'
 import Five from '../rate5/RateFive'
 import { Desc } from "../desc/desc"
+import { GlobalStorage } from "../../GlobalStorage";
 
-function AmizadeAnimais({other_pets_friendly}){
-    switch(other_pets_friendly){
+
+function AmizadeAnimais(){
+    const {cat} = React.useContext(GlobalStorage)
+    
+    switch(cat.other_pets_friendly){
         case 1:
             return(
             <Desc>

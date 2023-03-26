@@ -5,9 +5,13 @@ import Three from '../rate3/RateThree'
 import Four from '../rate4/RateFour'
 import Five from '../rate5/RateFive'
 import { Desc } from "../desc/desc";
+import { GlobalStorage } from "../../GlobalStorage";
 
-function ApegoAoDono({family_friendly}){
-    switch(family_friendly){
+
+function ApegoAoDono(){
+    const {cat} = React.useContext(GlobalStorage)
+
+    switch(cat.family_friendly){
         case 1:
             return(
             <Desc>

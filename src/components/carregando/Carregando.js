@@ -1,6 +1,7 @@
 import React from "react";
 import { Loading } from "./Carregando.style";
 
+
 function Carregando(){
     return(
         <Loading>
